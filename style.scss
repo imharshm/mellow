@@ -1,0 +1,370 @@
+body {
+  overflow-x: hidden;
+}
+
+.about-section {
+  background: #000916 url("../../assets/img/about_bg.png") center center/cover no-repeat;
+  padding: 3rem;
+  color: #ffffff;
+  height: 750px;
+  display: flex;
+  align-items: center;
+  .about-info {
+    max-width: 450px;
+    margin-left: 6rem;
+  }
+}
+
+.motive-section {
+  padding: 3rem;
+  .motive-info {
+    max-width: 450px;
+    .section-title {
+      color: #603aeb;
+      font-weight: 400;
+      margin-bottom: 0 !important;
+    }
+  }
+  .text-red {
+    color: #e94690;
+  }
+  .text-green {
+    color: #02afb4;
+  }
+  .text-orange {
+    color: #ffc727;
+  }
+  .motive-card-wrapper {
+    position: relative;
+    &::after {
+      content: "";
+      background: url("../../assets/img/motive_bg.png") center center/cover no-repeat;
+      width: 750px;
+      height: 500px;
+      display: block;
+      position: absolute;
+      top: -4rem;
+      right: -4rem;
+      z-index: -1;
+    }
+    .motive-card {
+      background-color: #ffffff;
+      box-shadow: 0 0 15px 0px #d2d2d2;
+      border-radius: 8px;
+      padding: 1rem;
+      margin: 1rem 0.5rem;
+      width: 185px;
+      height: 180px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      line-height: 1.2;
+      img {
+        max-width: 40px;
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+}
+
+.philosophy-section {
+  color: #ffffff;
+  padding: 3rem;
+  height: 900px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  &::after {
+    content: "";
+    background: url("../../assets/img/philosophy.png") center center/100% 100% no-repeat;
+    width: calc(100% + 10rem);
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -4rem;
+    z-index: -1;
+  }
+  .philosophy-info {
+    max-width: 490px;
+  }
+}
+
+.conversations-section {
+  padding: 3rem;
+  .conversations-img {
+    max-width: 350px;
+  }
+  .conversations-info {
+    max-width: 450px;
+    .section-title {
+      color: #603aeb;
+    }
+  }
+}
+
+.testimonials-section {
+  color: #ffffff;
+  padding: 3rem;
+  height: 860px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  &::after {
+    content: "";
+    background: url("../../assets/img/testimonials.png") center center/100% 100% no-repeat;
+    width: calc(100% + 10rem);
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -4rem;
+    z-index: -1;
+  }
+  .testimonials-info {
+    .testimonials-card {
+      display: flex;
+      align-items: center;
+      background: #ffffff;
+      color: #000000;
+      border-radius: 10px;
+      box-shadow: 0 0 10px 0 #dddddd;
+      padding: 3rem;
+      max-width: 550px;
+      min-height: 340px;
+      margin: auto;
+      padding-bottom: 5rem;
+    }
+  }
+}
+
+.contact-section {
+  padding: 3rem;
+  .contact-info {
+    max-width: 350px;
+    .section-title {
+      color: #603aeb;
+      font-weight: 400;
+      margin-bottom: 0 !important;
+    }
+    .contact-form {
+      box-shadow: 0 0 10px #dddddd;
+      border-radius: 10px;
+      padding: 2rem 2rem 4rem;
+      .form-group {
+        position: relative;
+        .floating-placeholder {
+          display: none;
+        }
+      }
+      input,
+      textarea {
+        font-size: 14px;
+        padding: 0.75rem;
+        border-color: #efefef;
+        resize: none;
+        &::placeholder {
+          color: #d4d4d4;
+          transition: all 0.3s ease;
+        }
+        &:focus {
+          color: #603aeb;
+          border: 1px solid #603aeb;
+          outline: none;
+          box-shadow: none;
+          &::placeholder {
+            color: transparent;
+            transition: all 0.3s ease;
+          }
+          ~ .floating-placeholder {
+            display: inline-block;
+            position: absolute;
+            top: -0.5rem;
+            font-size: 12px;
+            background: #fff;
+            left: 1rem;
+            padding: 0 0.25rem;
+          }
+        }
+      }
+      button {
+        background-color: #603aeb;
+        border-color: #603aeb;
+      }
+    }
+  }
+}
+
+.navbar {
+  &.bg-dark {
+    background: #000916 !important;
+  }
+  .navbar-brand {
+    max-width: 140px;
+  }
+}
+
+.mellow-footer {
+  color: #ffffff;
+  font-size: 14px;
+  height: 150px;
+  padding: 0 3rem 0 7rem;
+  &::after {
+    content: "";
+    background: url("../../assets/img/footer.png") center center/100% 100% no-repeat;
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 150px;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  .social-media-icon {
+    a {
+      background: #6f6f6f;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      text-decoration: none;
+      &:hover {
+        background: #854fee;
+      }
+    }
+  }
+  .container {
+    margin-top: 3rem;
+  }
+  a {
+    color: #ffffff;
+  }
+}
+
+.btn-rounded {
+  border-radius: 25px;
+}
+
+.btn {
+  &:focus,
+  &:active {
+    outline: none;
+    box-shadow: none;
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+  }
+}
+
+.btn-warning {
+  background-color: #feb727;
+}
+
+.btn-light {
+  color: #854fee;
+}
+
+.section-title {
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+.carousel {
+  .carousel-control-prev,
+  .carousel-control-next {
+    position: static;
+    background: #854fee;
+    opacity: 1;
+    width: 40px;
+    height: 40px;
+    top: 40%;
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      width: 1rem;
+    }
+  }
+  .carousel-indicators {
+    position: static;
+    & [data-bs-target] {
+      text-indent: 0;
+    }
+  }
+  .custom-carousel-action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 1.5rem;
+    left: 0;
+    width: 100%;
+  }
+}
+
+/* Portrait phones and smaller */
+@media (max-width: 767px) {
+  .about-section {
+    background: #000916 center center/cover no-repeat;
+    margin-top: 91px;
+    padding: 1rem 2rem 2rem;
+    height: auto;
+    .mobile-img {
+      height: 350px;
+    }
+    .about-info {
+      margin-left: 0;
+    }
+  }
+  .motive-section {
+    .motive-card-wrapper {
+      &::after {
+        content: unset;
+      }
+    }
+  }
+  .philosophy-section {
+    height: 300px;
+    background: #000916 center center/cover no-repeat;
+    &::after {
+      content: unset;
+    }
+  }
+  .testimonials-section {
+    background: #5131ea center center/cover no-repeat;
+    height: 600px;
+    padding: 1.5rem;
+    &::after {
+      content: unset;
+    }
+  }
+  .contact-section {
+    padding: 1.5rem;
+  }
+  .mellow-footer {
+    background-color: #000916;
+    padding: 1.5rem;
+    height: 200px;
+    .container {
+      margin-top: 0;
+      .navbar-brand {
+        max-width: 100px;
+      }
+      .navbar-text {
+        order: 2;
+        flex: 1 0 0%;
+        text-align: center;
+      }
+      .footer-nav {
+        order: 3;
+        flex: 1 0 0%;
+      }
+    }
+    .navbar-nav {
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+}
