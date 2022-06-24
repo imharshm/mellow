@@ -412,7 +412,8 @@ a {
   height: 280px;
 }
 .people-say-middle-sec .carousel-caption {
-  top: 50%;
+  position: static;
+  padding: 2rem;
   color: #000;
   margin-top: 45px;
 }
@@ -438,13 +439,28 @@ a {
   position: relative;
   margin: 0 20px;
 }
-.people-say-middle-sec .carousel-control-next,
+.carousel-indicators li {
+  background: transparent;
+  text-indent: unset;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  line-height: 1;
+  height: 30px;
+  width: 20px;
+  border: none;
+}
+.carousel-indicators .active {
+  font-size: 2rem;
+  position: relative;
+  top: 3px;
+}
+.carousel-control-next,
 .carousel-control-prev {
   position: relative;
   background: #fb1466;
   color: #fff;
   border-radius: 0;
-  position: absolute;
   width: 40px;
   height: 40px;
   display: flex;
@@ -573,7 +589,7 @@ select:invalid {
   height: 55px;
   border-radius: 30px;
   margin: 4px 0px 0px 0px;
-  background: #603aeb;
+  background: #5132ea;
   color: #fff;
   border: none;
   text-align: center;
@@ -735,203 +751,38 @@ select:invalid {
   position: relative;
 }
 
-.CSSgal {
-  position: relative;
-  overflow: hidden;
-  height: 220px;
-  padding: 0px 0px;
-}
-
 /* SLIDER */
-
-.CSSgal .slider {
-  height: 100%;
-  white-space: nowrap;
-  font-size: 0;
-  transition: 0.8s;
-  padding-bottom: 3rem;
-}
-
-.CSSgal {
+.carousel-caption .slider h5 {
   color: #000;
   text-align: left;
-}
-.CSSgal .slider h5 {
   font-weight: 600;
   font-size: 30px;
   margin: 0px 0px 10px 0px;
 }
-.CSSgal .slider img {
-  max-height: 400px;
-  margin-left: 3rem;
-  display: none;
-}
-.CSSgal .slider p {
+.carousel-caption .slider p {
+  color: #000;
   font-size: 18px;
   line-height: 25px;
   font-weight: 400;
   color: #25234d;
   margin-bottom: 0;
   max-width: 250px;
+  text-align: left;
 }
-.CSSgal a {
-  border-radius: 50%;
-  margin: 0 3px;
-  color: rgba(0, 0, 0, 0.8);
-  text-decoration: none;
+#carouselExampleControls1 .carousel-control-wrapper {
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 3rem;
 }
-
+#carouselExampleControls1 .carousel-control-wrapper .carousel-indicators {
+  margin: 0 2rem;
+}
+.carousel .slider-img img {
+  max-height: 400px;
+  margin-left: 3rem;
+  display: none;
+}
 /* SLIDES */
-
-.CSSgal .slider > * {
-  font-size: 1rem;
-  display: inline-block;
-  white-space: normal;
-  vertical-align: top;
-  height: 100%;
-  width: 100%;
-  background: none 50% no-repeat;
-  background-size: cover;
-}
-
-/* PREV/NEXT, CONTAINERS & ANCHORS */
-
-.CSSgal .prevNext {
-  position: relative;
-  z-index: 9;
-  bottom: 25px;
-  left: 0;
-  width: 300px;
-  height: 0;
-}
-
-.CSSgal .prevNext > div + div {
-  visibility: hidden; /* Hide all but first P/N container */
-}
-
-.CSSgal .prevNext a {
-  background: #fb1466;
-  color: #fff;
-  border-radius: 0;
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-  left: 0;
-}
-.CSSgal .prevNext a:hover {
-  opacity: 1;
-  background-color: #fb1466;
-}
-.CSSgal .prevNext a + a {
-  left: auto;
-  right: 0;
-}
-
-/* NAVIGATION */
-
-.CSSgal .bullets {
-  padding: 10px 0;
-  text-align: center;
-  bottom: 2.5rem;
-  position: relative;
-  width: 200px;
-  left: 3rem;
-}
-.CSSgal .bullets > a {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  line-height: 20px;
-  text-decoration: none;
-  text-align: center;
-  background: rgba(255, 255, 255, 1);
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-.CSSgal .bullets > a + a {
-  background: rgba(255, 255, 255, 0.5); /* Dim all but first */
-}
-.CSSgal .bullets > a:hover {
-  background: rgba(255, 255, 255, 0.7) !important;
-}
-
-/* NAVIGATION BUTTONS */
-/* ALL: */
-.CSSgal > s:target ~ .bullets > * {
-  background: rgba(255, 255, 255, 0.5);
-}
-/* ACTIVE */
-#s1:target ~ .bullets > *:nth-child(1) {
-  background: rgba(255, 255, 255, 1);
-}
-#s2:target ~ .bullets > *:nth-child(2) {
-  background: rgba(255, 255, 255, 1);
-}
-#s3:target ~ .bullets > *:nth-child(3) {
-  background: rgba(255, 255, 255, 1);
-}
-#s4:target ~ .bullets > *:nth-child(4) {
-  background: rgba(255, 255, 255, 1);
-}
-#s5:target ~ .bullets > *:nth-child(5) {
-  background: rgba(255, 255, 255, 1);
-}
-/* More slides? Add here more rules */
-
-/* PREV/NEXT CONTAINERS VISIBILITY */
-/* ALL: */
-.CSSgal > s:target ~ .prevNext > * {
-  visibility: hidden;
-}
-/* ACTIVE: */
-#s1:target ~ .prevNext > *:nth-child(1) {
-  visibility: visible;
-}
-#s2:target ~ .prevNext > *:nth-child(2) {
-  visibility: visible;
-}
-#s3:target ~ .prevNext > *:nth-child(3) {
-  visibility: visible;
-}
-#s4:target ~ .prevNext > *:nth-child(4) {
-  visibility: visible;
-}
-#s5:target ~ .prevNext > *:nth-child(5) {
-  visibility: visible;
-}
-/* More slides? Add here more rules */
-
-/* SLIDER ANIMATION POSITIONS */
-
-#s1:target ~ .slider {
-  transform: translateX(0%);
-  -webkit-transform: translateX(0%);
-}
-#s2:target ~ .slider {
-  transform: translateX(-100%);
-  -webkit-transform: translateX(-100%);
-}
-#s3:target ~ .slider {
-  transform: translateX(-200%);
-  -webkit-transform: translateX(-200%);
-}
-#s4:target ~ .slider {
-  transform: translateX(-300%);
-  -webkit-transform: translateX(-300%);
-}
-#s5:target ~ .slider {
-  transform: translateX(-300%);
-  -webkit-transform: translateX(-300%);
-}
-/* More slides? Add here more rules */
 
 .hide-d {
   display: none;
@@ -978,17 +829,9 @@ select:invalid {
     margin: 20px 0px 34px 0px;
     padding: 0px 0px;
   }
-  .CSSgal {
-    height: 270px;
-  }
-  .CSSgal .bullets {
-    width: 160px;
-  }
-  .CSSgal .prevNext {
-    width: 255px;
-  }
   .people-say-heading h2 {
     font-size: 28px;
+    margin-bottom: 14px;
   }
   .contact-form-set button {
     margin: 0px auto;
@@ -1013,12 +856,6 @@ select:invalid {
   .content-text-set {
     width: 100%;
     top: 30px;
-  }
-  .oval-icon-set {
-    position: absolute;
-    right: 20px;
-    top: -64px;
-    width: 90px;
   }
   .our-vision-middle-sec aside h2 {
     font-size: 28px;
@@ -1061,23 +898,12 @@ select:invalid {
     left: 0;
     text-align: left;
   }
-  .CSSgal .slider img {
+  .carousel .slider-img img {
     display: block;
     margin: auto;
   }
-  .CSSgal .bullets {
-    width: auto;
-    left: 0;
-  }
-  .CSSgal .slider .slider-img {
+  .carousel .slider-img {
     text-align: center;
-  }
-  .CSSgal .prevNext {
-    width: 100%;
-  }
-  .CSSgal .slider p {
-    font-size: 14px;
-    max-width: 100%;
   }
   .mobile-img {
     max-height: 400px;
@@ -1094,11 +920,19 @@ select:invalid {
     font-size: 30px;
   }
   .people-say-middle-sec {
-    padding: 3rem 0;
+    height: 600px;
+    padding: 2rem 0;
+  }
+  .people-say-middle-sec .people-say-row {
+    align-items: flex-start !important;
+    padding: 0 1rem;
   }
   .people-say-middle-sec .carousel {
-    width: 80%;
+    width: 100%;
     height: 300px;
+  }
+  .people-say-heading {
+    text-align: left;
   }
   .people-say-middle-sec .carousel-control-wrapper {
     position: absolute;
@@ -1107,10 +941,11 @@ select:invalid {
   }
   .people-say-row {
     background-size: 570px;
-    background-position: center 300px;
+    background-position: center 130px;
   }
   .people-say-middle-sec .carousel-caption {
     margin-top: 15px;
+    padding: 1rem;
   }
   .contact-form-main {
     padding: 40px 0px 0px 0px;
@@ -1136,11 +971,9 @@ select:invalid {
     margin: 20px 0px 34px 0px;
     padding: 0px 0px;
   }
-  .CSSgal {
-    height: 500px;
-  }
   .people-say-heading h2 {
     font-size: 28px;
+    margin-bottom: 14px;
   }
   .contact-form-set button {
     margin: 0px auto;
@@ -1167,10 +1000,7 @@ select:invalid {
     top: 30px;
   }
   .oval-icon-set {
-    position: absolute;
-    right: 20px;
-    top: -64px;
-    width: 90px;
+    display: none;
   }
   .our-vision-middle-sec aside h2 {
     font-size: 28px;
@@ -1201,8 +1031,19 @@ select:invalid {
   .conversations-sec-main h2 {
     font-size: 24px;
   }
-  .CSSgal .slider h5 {
+  .carousel .slider h5 {
     font-size: 18px;
+  }
+  .carousel-caption .slider p {
+    font-size: 15px;
+    max-width: 290px;
+  }
+  #carouselExampleControls1 .carousel-control-wrapper {
+    margin-top: 0;
+    justify-content: center;
+  }
+  #carouselExampleControls1 .carousel-control-wrapper .carousel-indicators {
+    margin: 0 0.5rem;
   }
   .conversations-sec-main aside {
     width: 100%;
