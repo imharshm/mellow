@@ -41,11 +41,13 @@
 					<a class="mellow-logo-set">
 						<img src="assets/images/logo.png" />
 					</a>
-					<button class="download-top-btn">Request Invite</button>
+					<button class="download-top-btn hide-m">Request Invite</button>
 				</header>
 				<div class="top-gallery-content-sec">
-					<h1>Real People.<br>Real Conversations.</h1>
+					<h1>Real People.</h1>
+					<h1> Real Conversations.</h1>
 					<div class="d-md-none text-center">
+						<div class="backdrop-img"></div>
 						<img class="mobile-img" src="assets/images/about-mobile.png" />
 					</div>
 					<p>A dating platform that helps you build <b class="font-weight-bold">deeper, more intimate
@@ -320,6 +322,8 @@
 
 		<div class="contact-form-main">
 			<img class="oval-icon-set" src="assets/images/oval-icon.svg" />
+			<img class="yellow-oval-2" src="assets/images/yellow-oval-half.svg" />
+			<img class="dotted-icon-set-2" src="assets/images/dotted-cricle.svg" />
 			<div class="container">
 				<div class="contact-main-middle">
 					<div class="content-text-set">
@@ -415,6 +419,13 @@
 			wrap: true,
 			keyboard: true
 		});
+
+		$(".top-join-btn").click(function () {
+
+			$('html, body').animate({
+				scrollTop: $(".content-text-set").offset().top
+			}, 1000);
+		})
 
 	</script>
 </body>

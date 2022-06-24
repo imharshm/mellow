@@ -165,7 +165,7 @@ a {
 .top-nav-container {
   background: url(../images/top-main-bg.svg);
   width: 100%;
-  height: 750px;
+  height: calc(100vh + 60px);
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -458,7 +458,7 @@ a {
 .carousel-control-next,
 .carousel-control-prev {
   position: relative;
-  background: #fb1466;
+  background: linear-gradient(45deg, #5132ea, #a360f0);
   color: #fff;
   border-radius: 0;
   width: 40px;
@@ -469,6 +469,13 @@ a {
   text-align: center;
   -webkit-transition: 0.3s;
   transition: 0.3s;
+  opacity: 1;
+}
+.carousel-control-next {
+  background: #000916;
+}
+#carouselExampleControls .carousel-control-prev {
+  background: #fb1466;
 }
 .carousel-control-wrapper {
   display: flex;
@@ -559,6 +566,10 @@ a {
   min-height: 550px;
   background: url(../images/form-bg.svg) no-repeat;
   background-size: cover;
+}
+.yellow-oval-2,
+.dotted-icon-set-2 {
+  display: none;
 }
 .contact-form-set .form-input-main {
   margin: 10px 0px 20px 0px;
@@ -702,8 +713,6 @@ select:invalid {
 
 .content-text-set {
   width: 34%;
-  position: relative;
-  top: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -799,7 +808,7 @@ select:invalid {
   }
   .top-gallery-content-sec h1 {
     font-size: 30px;
-    line-height: 50px;
+    line-height: 1.5;
   }
   .top-nav-container header .mellow-logo-set img {
     width: 80%;
@@ -809,7 +818,7 @@ select:invalid {
     font-size: 30px;
   }
   .contact-form-main {
-    padding: 40px 0px 0px 0px;
+    padding: 40px 25px 0px 25px;
   }
   .footer-sec-main {
     background-size: inherit;
@@ -841,21 +850,35 @@ select:invalid {
     position: relative;
     right: 0%;
     width: 100%;
-    margin: 10px 0px 0px 0px;
-    padding: 40px 20px 10px 20px;
-    min-height: 462px;
+    margin: 30px 0px 40px 0px;
+    padding: 40px 20px 30px 20px;
+    min-height: auto;
     background: inherit;
     background-size: cover;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px 0 #e8e2fc;
+    border-radius: 10px;
+  }
+  .contact-form-set::after {
+    content: "";
+    box-shadow: 0 0 10px 0 #e8e2fc;
+    border-radius: 10px;
+    width: 98%;
+    height: 100%;
+    position: absolute;
+    top: 10px;
+    left: 3px;
+    z-index: -1;
   }
   .our-vision-middle-sec {
     margin: 0px 0px 40px 0px;
     padding: 38px 0px 29px 20px;
     display: flex;
     flex-direction: column;
-  }
-  .content-text-set {
-    width: 100%;
-    top: 30px;
+    background: url(/assets/images/how-it-bg.svg);
+    background-position: center 235px;
+    background-size: contain;
+    background-repeat: no-repeat;
   }
   .our-vision-middle-sec aside h2 {
     font-size: 28px;
@@ -888,9 +911,24 @@ select:invalid {
   .hide-m {
     display: none;
   }
+  .backdrop-img {
+    background: url(/assets/images/dots.svg);
+    background-size: 370px;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 80px;
+    left: -12px;
+    width: 300px;
+    height: 400px;
+    z-index: 0;
+    opacity: 0.5;
+  }
   .top-nav-container {
-    height: auto;
-    padding-bottom: 4rem;
+    background: #000916;
+    height: 950px;
+    padding: 0rem 1.5rem;
+    clip-path: polygon(0 0, 100% 0%, 100% 95%, 0% 100%);
   }
   .top-gallery-content-sec {
     width: 100%;
@@ -906,11 +944,17 @@ select:invalid {
     text-align: center;
   }
   .mobile-img {
-    max-height: 400px;
+    max-height: 500px;
+    margin-top: -1rem;
+    position: relative;
   }
   .top-gallery-content-sec h1 {
     font-size: 30px;
-    line-height: 50px;
+    line-height: 1.5;
+    margin: 0;
+  }
+  .top-gallery-content-sec p {
+    font-size: 16px;
   }
   .top-nav-container header .mellow-logo-set img {
     width: 80%;
@@ -919,9 +963,16 @@ select:invalid {
     margin: 0px 0px 20px 0px;
     font-size: 30px;
   }
+  .content-text-set {
+    width: 100%;
+  }
   .people-say-middle-sec {
-    height: 600px;
-    padding: 2rem 0;
+    height: 530px;
+    padding: 2.25rem 15px 0 15px;
+    clip-path: polygon(0 0, 100% 0%, 100% 95%, 0% 100%);
+    background-size: cover;
+    background-position: center 0px;
+    background-repeat: no-repeat;
   }
   .people-say-middle-sec .people-say-row {
     align-items: flex-start !important;
@@ -929,7 +980,13 @@ select:invalid {
   }
   .people-say-middle-sec .carousel {
     width: 100%;
-    height: 300px;
+    height: 270px;
+  }
+  .people-say-middle-sec .carousel-inner {
+    height: 270px;
+    display: flex;
+    align-items: center;
+    padding-bottom: 5rem;
   }
   .people-say-heading {
     text-align: left;
@@ -940,15 +997,28 @@ select:invalid {
     left: 2.5rem;
   }
   .people-say-row {
-    background-size: 570px;
-    background-position: center 130px;
+    background-size: 530px;
+    background-position: 8px 125px;
   }
   .people-say-middle-sec .carousel-caption {
     margin-top: 15px;
     padding: 1rem;
   }
   .contact-form-main {
-    padding: 40px 0px 0px 0px;
+    padding: 40px 25px 0px 25px;
+  }
+  .dotted-icon-set-2 {
+    position: absolute;
+    transform: rotate(-180deg);
+    top: 175px;
+    left: 0;
+    display: block;
+  }
+  .yellow-oval-2 {
+    position: absolute;
+    bottom: 30px;
+    right: 0;
+    display: block;
   }
   .footer-sec-main {
     background-size: inherit;
@@ -983,21 +1053,35 @@ select:invalid {
     position: relative;
     right: 0%;
     width: 100%;
-    margin: 10px 0px 0px 0px;
-    padding: 40px 20px 10px 20px;
-    min-height: 462px;
+    margin: 30px 0px 40px 0px;
+    padding: 40px 20px 30px 20px;
+    min-height: auto;
     background: inherit;
     background-size: cover;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px 0 #e8e2fc;
+    border-radius: 10px;
+  }
+  .contact-form-set::after {
+    content: "";
+    box-shadow: 0 0 10px 0 #e8e2fc;
+    border-radius: 10px;
+    width: 98%;
+    height: 100%;
+    position: absolute;
+    top: 10px;
+    left: 3px;
+    z-index: -1;
   }
   .our-vision-middle-sec {
     margin: 0px 0px 40px 0px;
-    padding: 38px 0px 29px 20px;
+    padding: 40px 15px 0 15px;
     display: flex;
     flex-direction: column;
-  }
-  .content-text-set {
-    width: 100%;
-    top: 30px;
+    background: url(/assets/images/how-it-bg.svg);
+    background-position: center 235px;
+    background-size: contain;
+    background-repeat: no-repeat;
   }
   .oval-icon-set {
     display: none;
@@ -1024,7 +1108,7 @@ select:invalid {
     font-size: 14px;
   }
   .conversations-sec-main {
-    padding: 10px 0 40px 0;
+    padding: 10px 15px 40px 15px;
     display: flex;
     flex-direction: column;
   }
