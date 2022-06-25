@@ -354,7 +354,7 @@
 							<span class="small text-nuted floating-placeholder">Gender</span>
 						</div>
 						<div class="form-input-main required">
-							<input class="form-control" name="contactNumber" type="text" placeholder="Phone Number" />
+							<input class="form-control" name="contactNumber" type="tel" placeholder="Phone Number" />
 							<span class="small text-nuted floating-placeholder">Phone Number</span>
 						</div>
 						<!--form-input-main end here-->
@@ -438,17 +438,9 @@
 			$('html, body').animate({
 				scrollTop: $(".content-text-set").offset().top
 			}, 1000);
-		})
-
-		// $("#form-submit").click(function (e) {
-		// 	e.preventDefault();
-		// 	$.post("https://mellow-web-static.azurewebsites.net/api/MellowRequestInvitePost", $("#contact-form").serialize(), function (data) {
-		// 		alert(data);
-		// 	});
-		// });
+		});
 
 		$(function () {
-
 			$('#contact-form').on('submit', function (e) {
 				e.preventDefault();
 				var isFormValid = true;
