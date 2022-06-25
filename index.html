@@ -334,18 +334,18 @@
 					<!--content-text-set end here-->
 
 					<form id="contact-form" class="contact-form-set">
-						<div class="form-input-main">
+						<div class="form-input-main required">
 							<input class="form-control" name="name" type="text" placeholder="Full Name" />
 							<span class="small text-nuted floating-placeholder">Full Name</span>
 						</div>
 						<!--form-input-main end here-->
-						<div class="form-input-main">
+						<div class="form-input-main required">
 							<input class="form-control" name="city" type="text" placeholder="City" />
 							<span class="small text-nuted floating-placeholder">City</span>
 						</div>
 						<!--form-input-main end here-->
-						<div class="form-input-main">
-							<select class="form-control" name="gender" required>
+						<div class="form-input-main required">
+							<select class="form-control" name="gender">
 								<option value="" disabled selected hidden>Gender</option>
 								<option value="male">Male</option>
 								<option value="female">Female</option>
@@ -353,11 +353,14 @@
 							</select>
 							<span class="small text-nuted floating-placeholder">Gender</span>
 						</div>
-						<div class="form-input-main">
+						<div class="form-input-main required">
 							<input class="form-control" name="contactNumber" type="text" placeholder="Phone Number" />
 							<span class="small text-nuted floating-placeholder">Phone Number</span>
 						</div>
 						<!--form-input-main end here-->
+						<div id="divSuccessMsg" class="text-center text-success mb-3">
+
+						</div>
 						<div class="text-center">
 							<button type="submit" id="form-submit">Request Invite</button>
 							<button type="reset" hidden></button>
@@ -437,11 +440,54 @@
 			}, 1000);
 		})
 
-		$("#form-submit").click(function (e) {
-			e.preventDefault();
-			$.post("https://mellow-web-static.azurewebsites.net/api/MellowRequestInvitePost", $("#contact-form").serialize(), function (data) {
-				// alert(data);
+		// $("#form-submit").click(function (e) {
+		// 	e.preventDefault();
+		// 	$.post("https://mellow-web-static.azurewebsites.net/api/MellowRequestInvitePost", $("#contact-form").serialize(), function (data) {
+		// 		alert(data);
+		// 	});
+		// });
+
+		$(function () {
+
+			$('#contact-form').on('submit', function (e) {
+				e.preventDefault();
+				var isFormValid = true;
+
+				$(".required input, .required select").each(function () {
+					if ($.trim($(this).val()).length == 0) {
+						$(this).addClass("border-danger");
+						isFormValid = false;
+					}
+					else {
+						$(this).removeClass("border-danger");
+					}
+				});
+
+				if (!isFormValid) console.log("Please fill in all the required fields (indicated by *)");
+				else {
+					$.ajax({
+						type: 'post',
+						url: 'https://mellow-web-static.azurewebsites.net/api/MellowRequestInvitePost',
+						data: JSON.stringify($("#contact-form").serialize()),
+						success: function (result) {
+							$('#divSuccessMsg').html("Thanks! We've received your details and will be in touch as soon as you can try the app.")
+							setTimeout(function () {
+								$('#divSuccessMsg').fadeOut();
+							}, 3000);
+						}
+					});
+				}
+				$(this).trigger("reset");
+				return isFormValid;
+
 			});
+
+			$('.required input, .required select').on('keyup change', function () {
+				if ($.trim($(this).val()).length !== 0) {
+					$(this).removeClass("border-danger");
+				}
+			})
+
 		});
 
 	</script>
