@@ -333,19 +333,19 @@
 					</div>
 					<!--content-text-set end here-->
 
-					<div class="contact-form-set">
+					<form id="contact-form" class="contact-form-set">
 						<div class="form-input-main">
-							<input class="form-control" type="text" placeholder="Full Name" />
+							<input class="form-control" name="name" type="text" placeholder="Full Name" />
 							<span class="small text-nuted floating-placeholder">Full Name</span>
 						</div>
 						<!--form-input-main end here-->
 						<div class="form-input-main">
-							<input class="form-control" type="text" placeholder="City" />
+							<input class="form-control" name="city" type="text" placeholder="City" />
 							<span class="small text-nuted floating-placeholder">City</span>
 						</div>
 						<!--form-input-main end here-->
 						<div class="form-input-main">
-							<select class="form-control" name="" id="" required>
+							<select class="form-control" name="gender" required>
 								<option value="" disabled selected hidden>Gender</option>
 								<option value="male">Male</option>
 								<option value="female">Female</option>
@@ -354,14 +354,16 @@
 							<span class="small text-nuted floating-placeholder">Gender</span>
 						</div>
 						<div class="form-input-main">
-							<input class="form-control" type="text" placeholder="Phone Number" />
+							<input class="form-control" name="contactNumber" type="text" placeholder="Phone Number" />
 							<span class="small text-nuted floating-placeholder">Phone Number</span>
 						</div>
 						<!--form-input-main end here-->
 						<div class="text-center">
-							<button>Request Invite</button>
+							<button type="submit" id="form-submit">Request Invite</button>
+							<button type="reset" hidden></button>
+
 						</div>
-					</div>
+					</form>
 					<!--contact-form-set end here-->
 
 				</div>
@@ -434,6 +436,13 @@
 				scrollTop: $(".content-text-set").offset().top
 			}, 1000);
 		})
+
+		$("#form-submit").click(function (e) {
+			e.preventDefault();
+			$.post("https://mellow-web-static.azurewebsites.net/api/MellowRequestInvitePost", $("#contact-form").serialize(), function (data) {
+				// alert(data);
+			});
+		});
 
 	</script>
 </body>
