@@ -163,7 +163,7 @@ a {
   padding: 0px 20px;
 }
 .top-nav-container {
-  background: url(../images/top-main-bg.svg);
+  background: url("../images/top-main-bg.svg");
   width: 100%;
   height: calc(100vh + 60px);
   background-repeat: no-repeat;
@@ -233,7 +233,7 @@ a {
   outline: none;
 }
 .philosphy-middle-sec {
-  background: url(../images/mission.svg);
+  background: url("../images/mission.svg");
   height: 830px;
   background-repeat: no-repeat;
   background-size: cover;
@@ -275,7 +275,7 @@ a {
   max-width: 440px;
 }
 .people-say-middle-sec {
-  background: url(../images/people-say-bg.svg);
+  background: url("../images/people-say-bg.svg");
   width: 100%;
   height: 850px;
   padding: 3rem;
@@ -283,7 +283,7 @@ a {
   position: relative;
 }
 .people-say-row {
-  background-image: url(/assets/images/dots.svg);
+  background-image: url("../images/dots.svg");
   background-repeat: no-repeat;
   background-size: 630px;
   background-position: center 285px;
@@ -389,7 +389,7 @@ a {
   position: relative;
   border-radius: 20px;
   background-color: #ffffff;
-  background-image: url(/assets/images/quotes.svg);
+  background-image: url("../images/quotes.svg");
   background-repeat: no-repeat;
   background-position: center 30px;
 }
@@ -499,7 +499,7 @@ a {
   position: relative;
 }
 .footer-sec-main {
-  background: url(../images/footer-bg.png) no-repeat;
+  background: url("../images/footer-bg.png") no-repeat;
   background-size: cover;
   margin: 0px 0px;
   padding: 100px 0px 1rem 0px;
@@ -572,7 +572,7 @@ a {
   margin: 0px 0px 0px 0px;
   padding: 40px 50px;
   min-height: 550px;
-  background: url(../images/form-bg.svg) no-repeat;
+  background: url("../images/form-bg.svg") no-repeat;
   background-size: cover;
 }
 .yellow-oval-2,
@@ -881,7 +881,7 @@ select:invalid {
     padding: 38px 0px 29px 20px;
     display: flex;
     flex-direction: column;
-    background: url(/assets/images/how-it-bg.svg);
+    background: url("../images/how-it-bg.svg");
     background-position: center 235px;
     background-size: contain;
     background-repeat: no-repeat;
@@ -918,13 +918,13 @@ select:invalid {
     display: none;
   }
   .backdrop-img {
-    background: url(/assets/images/dots.svg);
+    background: url("../images/dots.svg");
     background-size: 370px;
     background-repeat: no-repeat;
     background-position: center;
     position: absolute;
     top: 80px;
-    left: -12px;
+    left: 8px;
     width: 300px;
     height: 400px;
     z-index: 0;
@@ -1081,7 +1081,7 @@ select:invalid {
     padding: 40px 15px 0 15px;
     display: flex;
     flex-direction: column;
-    background: url(/assets/images/how-it-bg.svg);
+    background: url("../images/how-it-bg.svg");
     background-position: center 235px;
     background-size: contain;
     background-repeat: no-repeat;
